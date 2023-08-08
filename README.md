@@ -31,7 +31,7 @@
 - [📝 License](#license)
 
 
-# 📖 Fullstack Development <a name="Capstone"></a>
+# 📖 Fullstack Development <a name="Awesome books"></a>
 
 **Capstone** is a simple HTML, CSS and JavaScript project: 
 
@@ -39,19 +39,22 @@
 
 
 ### Key Features <a name="key-features"></a>
-
-- Responsive webpage (Mobile and Desktop)
-- Menu
-    - When the user clicks (or taps) the hamburger button, the mobile menu appears.
-    - When the user clicks (or taps) the close (X) button, the mobile menu disappears.
-    - When the user clicks (or taps) any of the mobile menu options, the mobile menu disappears.
-    - When the user clicks (or taps) any of the mobile menu options, a correct part of the page is displayed.
+- Awsome book is acollection that keeps a list of books
+   - Allow user add a new book to the collection, with title and author.
+   - remove a book from the collection
+- When a user clicks the "Add" button:
+   - A new book is added to the collection.
+   - The new book is displayed in the page.
+- When a user clicks the "Remove" button:
+    - The correct book is removed from the collection.
+    - The correct book dissapears from the page.
+- Data is preserved in the browser's memory by using localStorage
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://sagieramos.github.io/CAPSTONE-ONE/)
+- [Live Demo Link](https://sagieramos.github.io/Awesome-books)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,14 +69,14 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 ```sh
-  git clone https://github.com/sagieramos/CAPSTONE-ONE $HOME
+  git clone https://github.com/sagieramos/Awesome-books $HOME
 ```
 ### Usage
 
 To run the project, execute the following command:
 
 ```sh
-  open $HOME/CAPSTONE-ONE/index.html
+  open $HOME/Awesome-books/index.html
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -85,12 +88,15 @@ To run the project, execute the following command:
 - Twitter: [@sagieramos](https://twitter.com/sagieramos)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/sagieramos)
 
+
+👤 ***Aisha Alselwi**
+- GitHub: [@AlselwiAisha](https://github.com/AlselwiAisha)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add web games**
 - [ ] **Database**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -116,8 +122,6 @@ If you like this project, please consider subscribing to my GitHub account for u
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 - Jehovah.
 - [Microverse Team](https://www.microverse.org/).
-- Spacial thank to [Cindy Shin](https://www.behance.net/gallery/29845175/CC-Global-Summit-2015) for his beautiful design.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ❓ FAQ <a name="faq"></a>

@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+html {
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 24px;
+}
+
+#books {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+#books article {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.remove {
+  width: fit-content;
+  padding: 4px;
+  margin-top: 10px;
+  border: 1px solid #333333a0;
+}
+
+hr {
+  margin-top: 24px;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+.author {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #333333a0;
+}
+
+#submit {
+  padding: 10px;
+  width: fit-content;
+}
