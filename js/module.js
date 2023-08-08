@@ -1,49 +1,57 @@
 class AwesomeBooks {
-  constructor(memAdrr) {
+  constructor(memAdrr, container) {
     this.memAdrr = memAdrr;
+    this.container = document.querySelector(container);
   }
 
   store(BookTitle, booKAuthor) {
-    if (BookTitle < 1 || booKAuthor < 1) return;
+    if (!BookTitle || !booKAuthor) return;
     const storeData = JSON.parse(localStorage.getItem(this.memAdrr)) || [];
     const book = { title: BookTitle, author: booKAuthor };
     storeData.push(book);
     localStorage.setItem(this.memAdrr, JSON.stringify(storeData));
+    const article = this.#addActicle(BookTitle, booKAuthor);
+    this.container.appendChild(article);
   }
 
-  display(container) {
+  #addActicle(title, author) {
+    const h2 = document.createElement('h2');
+    h2.className = 'author';
+    h2.textContent = `"${title}" by ${author}`;
+    const btn = document.createElement('button');
+    btn.className = 'remove';
+    btn.textContent = 'Remove';
+    const article = document.createElement('article');
+    article.className = 'awesome-book';
+    article.append(h2, btn);
+    return article;
+  }
+
+  display() {
     const storeData = JSON.parse(localStorage.getItem(this.memAdrr)) || [];
     const fragment = document.createDocumentFragment();
 
-    while (container.firstChild) {
-      container.firstChild.remove();
+    while (this.container.firstChild) {
+      this.container.firstChild.remove();
     }
-
     storeData.forEach((obj) => {
-      const h2 = document.createElement('h2');
-      h2.className = 'author';
-      h2.textContent = `"${obj.title}" by ${obj.author}`;
-      const btn = document.createElement('button');
-      btn.className = 'remove';
-      btn.textContent = 'Remove';
-      const article = document.createElement('article');
-      article.className = 'awesome-book';
-      article.append(h2, btn);
+      const article = this.#addActicle(obj.title, obj.author);
       fragment.appendChild(article);
     });
-
-    container.appendChild(fragment);
+    this.container.appendChild(fragment);
   }
 
   delete(index) {
-    const storeData = JSON.parse(localStorage.getItem(this.memAdrr));
+    const { children } = this.container;
+    if (index < 0 || index >= children.length) return;
 
-    if (!Array.isArray(storeData)) return;
+    children[index].remove();
+    const storeData = JSON.parse(localStorage.getItem(this.memAdrr)) || [];
 
-    if (index < 0 || index >= storeData.length) return;
-
-    storeData.splice(index, 1);
-    localStorage.setItem(this.memAdrr, JSON.stringify(storeData));
+    if (Array.isArray(storeData)) {
+      storeData.splice(index, 1);
+      localStorage.setItem(this.memAdrr, JSON.stringify(storeData));
+    }
   }
 }
 

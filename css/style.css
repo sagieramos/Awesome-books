@@ -35,7 +35,7 @@ h1 {
 }
 
 hr {
-  width: 100px;
+  width: 50px;
 }
 
 #hero {
@@ -78,6 +78,8 @@ input {
   justify-content: space-between;
   align-items: center;
   padding: 8px;
+  position: relative;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .awesome-book h2 {
@@ -88,3 +90,15 @@ input {
 .awesome-book:nth-child(odd) {
   background: #8080804f;
 }
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+
+/* .remove,
+#submit {
+  cursor: pointer;
+} */
