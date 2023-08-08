@@ -14,15 +14,14 @@ function handleBookStorage(e) {
     const i = books.indexOf(target);
     book.delete(i);
     book.display(hero);
+  } else if (target.matches('#submit')) {
+    const formData = new FormData(form);
+    const title = formData.get('title');
+    const author = formData.get('author');
+    book.store(title, author);
+    form.reset();
+    book.display(hero);
   }
-  else if (target.matches('#submit')) 
-  {  const formData = new FormData(form);
-     const title = formData.get('title');
-     const author = formData.get('author');
-           book.store(title, author);
-      form.reset(); 
-      book.display(hero); }
 }
 
-
-window.addEventListener('click',(e)=> handleBookStorage(e));
+window.addEventListener('click', (e) => handleBookStorage(e));
