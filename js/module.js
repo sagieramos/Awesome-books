@@ -20,19 +20,15 @@ class AwesomeBooks {
     }
 
     storeData.forEach((obj) => {
-      const title = document.createElement('h2');
-      title.className = 'title';
-      title.textContent = obj.title;
-      const author = document.createElement('h2');
-      author.className = 'author';
-      author.textContent = obj.author;
+      const h2 = document.createElement('h2');
+      h2.className = 'author';
+      h2.textContent = `"${obj.title}" by ${obj.author}`;
       const btn = document.createElement('button');
       btn.className = 'remove';
       btn.textContent = 'Remove';
       const article = document.createElement('article');
       article.className = 'awesome-book';
-      const hr = document.createElement('hr');
-      article.append(title, author, btn, hr);
+      article.append(h2, btn);
       fragment.appendChild(article);
     });
 
