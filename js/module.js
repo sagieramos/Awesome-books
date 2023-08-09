@@ -14,6 +14,7 @@ class AwesomeBooks {
     this.container.appendChild(article);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   #addActicle(title, author) {
     const h2 = document.createElement('h2');
     h2.className = 'author';
