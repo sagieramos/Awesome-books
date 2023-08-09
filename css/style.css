@@ -52,6 +52,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   width: 86%;
 }
@@ -64,6 +65,7 @@ input {
   padding: 10px;
   border: 1px solid #333333a0;
   font-weight: 600;
+  width: 100%;
 }
 
 #submit {
