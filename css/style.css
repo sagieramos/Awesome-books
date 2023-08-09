@@ -11,9 +11,25 @@ html {
   font-size: 16px;
 }
 
+header {
+  padding: 12px;
+
+}
+
+li {
+  list-style: none;
+}
+
 h1 {
+  font-size: 1.2rem;
+}
+
+#time {
+  float: right;
+}
+
+.topic {
   text-align: center;
-  margin-top: 24px;
 }
 
 #book-container {
@@ -39,6 +55,7 @@ hr {
 }
 
 #hero {
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   display: flex;
@@ -55,10 +72,6 @@ form {
   align-items: center;
   gap: 10px;
   width: 86%;
-}
-
-form h2 {
-  margin-bottom: 12px;
 }
 
 input {
@@ -102,4 +115,33 @@ input {
   opacity: 0;
   transform: translateY(-20px);
   pointer-events: none;
+}
+
+#nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+  border: 1px solid #333;
+  margin-bottom: 12px;
+}
+
+#nav-links {
+  display: flex;
+}
+
+.nav-link:not(:last-child) {
+  border-right: 1px solid #333;
+}
+.nav-link {
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  color: blue;
 }

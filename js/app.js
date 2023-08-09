@@ -1,7 +1,35 @@
-import AwesomeBooks from './module.js';
+import AwesomeBooks, { displayTime } from './module.js';
 
-const form = document.getElementById('myForm');
 const book = new AwesomeBooks('User', '#books');
+
+const bookContainer = document.getElementById('book-container');
+const form = document.getElementById('myForm');
+const contact = document.getElementById('contact-container');
+
+setInterval(() => { displayTime('#time'); }, 1000);
+
+function toggleNav(target) {
+  const children = [...document.querySelectorAll('.nav-link')];
+  const index = children.indexOf(target);
+
+  if (target.parentNode.id === 'nav-links') {
+    children.forEach((item) => {
+      item.classList.remove('active');
+    });
+    children[index].classList.add('active');
+    bookContainer.classList.add('hidden');
+    form.classList.add('hidden');
+    contact.classList.add('hidden');
+  }
+
+  if (target.id === 'list') {
+    bookContainer.classList.remove('hidden');
+  } else if (target.id === 'addNew') {
+    form.classList.remove('hidden');
+  } else if (target.id === 'contact') {
+    contact.classList.remove('hidden');
+  }
+}
 
 function handleBookStorage(e) {
   const { target } = e;
@@ -19,6 +47,7 @@ function handleBookStorage(e) {
     book.store(title, author);
     form.reset();
   }
+  toggleNav(target);
 }
 
 function init() {
