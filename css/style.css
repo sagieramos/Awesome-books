@@ -75,6 +75,11 @@ input {
   font-weight: 600;
 }
 
+.remove,
+#submit {
+  cursor: pointer;
+}
+
 .awesome-book {
   display: flex;
   justify-content: space-between;
