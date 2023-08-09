@@ -26,4 +26,10 @@ function init() {
   book.display();
 }
 
+function deleteCookie(cookieName) {
+  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=https://sagieramos.github.io/Awesome-books/;`;
+}
+
+deleteCookie('myCookie');
+
 document.addEventListener('DOMContentLoaded', init);
