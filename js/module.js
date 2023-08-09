@@ -2,16 +2,16 @@ const createArticle = (title, author) => {
   const article = document.createElement('article');
   const h2 = document.createElement('h2');
   const btn = document.createElement('button');
-  
+
   article.className = 'awesome-book';
   h2.className = 'author';
   btn.className = 'remove';
-  
+
   h2.textContent = `"${title}" by ${author}`;
   btn.textContent = 'Remove';
-  
+
   article.append(h2, btn);
-  
+
   return article;
 };
 
@@ -26,7 +26,7 @@ class AwesomeBooks {
 
     const storeData = JSON.parse(localStorage.getItem(this.memAdrr)) || [];
     const book = { title: BookTitle, author: booKAuthor };
-    
+
     storeData.push(book);
     localStorage.setItem(this.memAdrr, JSON.stringify(storeData));
     const article = createArticle(BookTitle, booKAuthor);
