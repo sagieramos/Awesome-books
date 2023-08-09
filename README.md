@@ -21,6 +21,7 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Install](#install)
   - [Usage](#usage)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
@@ -71,6 +72,16 @@ Clone this repository to your desired folder:
 ```sh
   git clone https://github.com/sagieramos/Awesome-books $HOME
 ```
+
+
+### Install
+
+Install this project with:
+
+Example command:
+
+- Open cloned repository in your text editor and start editing as required.
+
 ### Usage
 
 To run the project, execute the following command:
