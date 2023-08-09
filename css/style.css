@@ -1,23 +1,23 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #333;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
 }
 
 html {
+  overflow-x: hidden;
+  overflow-y: auto;
   font-size: 16px;
 }
 
 header {
   padding: 12px;
-
-}
-
-li {
-  list-style: none;
+  min-width: 400px;
 }
 
 h1 {
@@ -30,6 +30,7 @@ h1 {
 
 .topic {
   text-align: center;
+  margin: 24px 0;
 }
 
 #book-container {
@@ -56,13 +57,18 @@ hr {
 
 #hero {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 12px;
   gap: 32px;
+  margin: 0 auto;
+  min-width: 400px;
+}
+
+#myForm {
+  width: 86%;
+  max-width: 600px;
 }
 
 form {
@@ -71,7 +77,6 @@ form {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 86%;
 }
 
 input {
@@ -86,6 +91,7 @@ input {
   width: fit-content;
   align-self: flex-end;
   font-weight: 600;
+  margin: 14px 0;
 }
 
 .remove,
@@ -131,14 +137,40 @@ input {
   display: flex;
 }
 
+.nav-link {
+  padding: 10px;
+  list-style: none;
+}
+
 .nav-link:not(:last-child) {
   border-right: 1px solid #333;
 }
-.nav-link {
-  padding: 10px;
+
+#confirm {
+  align-self: flex-end;
+  margin: 4px 0;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-.hidden {
+#contact-container {
+  min-width: 400px;
+  width: 100%;
+}
+
+.cc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-info {
+  padding: 0 32px;
+}
+
+.hidden,
+#confirm {
   display: none;
 }
 

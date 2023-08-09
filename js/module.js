@@ -89,5 +89,4 @@ function displayTime(element) {
   document.querySelector(element).textContent = timeString;
 }
 
-export { displayTime };
-export default AwesomeBooks;
+export { AwesomeBooks, displayTime };

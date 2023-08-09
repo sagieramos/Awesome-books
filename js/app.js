@@ -1,9 +1,10 @@
-import AwesomeBooks, { displayTime } from './module.js';
+import { AwesomeBooks, displayTime } from './module.js';
 
 const book = new AwesomeBooks('User', '#books');
 
 const bookContainer = document.getElementById('book-container');
 const form = document.getElementById('myForm');
+const formValues = document.getElementById('form');
 const contact = document.getElementById('contact-container');
 
 setInterval(() => { displayTime('#time'); }, 1000);
@@ -41,11 +42,19 @@ function handleBookStorage(e) {
     }, 300);
   } else if (target.matches('#submit')) {
     e.preventDefault();
-    const formData = new FormData(form);
+    const formData = new FormData(formValues);
     const title = formData.get('title');
     const author = formData.get('author');
     book.store(title, author);
-    form.reset();
+    formValues.reset();
+    if (title && author) {
+      const confirm = document.getElementById('confirm');
+      confirm.textContent = `"${title}" by ${author} is added`;
+      confirm.style.display = 'block';
+      setTimeout(() => {
+        confirm.style.display = 'none';
+      }, 2000);
+    }
   }
   toggleNav(target);
 }
