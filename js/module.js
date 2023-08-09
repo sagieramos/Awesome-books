@@ -1,3 +1,20 @@
+const createArticle = (title, author) => {
+  const article = document.createElement('article');
+  const h2 = document.createElement('h2');
+  const btn = document.createElement('button');
+  
+  article.className = 'awesome-book';
+  h2.className = 'author';
+  btn.className = 'remove';
+  
+  h2.textContent = `"${title}" by ${author}`;
+  btn.textContent = 'Remove';
+  
+  article.append(h2, btn);
+  
+  return article;
+};
+
 class AwesomeBooks {
   constructor(memAdrr, container) {
     this.memAdrr = memAdrr;
@@ -6,26 +23,14 @@ class AwesomeBooks {
 
   store(BookTitle, booKAuthor) {
     if (!BookTitle || !booKAuthor) return;
+
     const storeData = JSON.parse(localStorage.getItem(this.memAdrr)) || [];
     const book = { title: BookTitle, author: booKAuthor };
+    
     storeData.push(book);
     localStorage.setItem(this.memAdrr, JSON.stringify(storeData));
-    const article = this.#addActicle(BookTitle, booKAuthor);
+    const article = createArticle(BookTitle, booKAuthor);
     this.container.appendChild(article);
-  }
-
-  // eslint-disable-next-line class-methods-use-this
-  #addActicle(title, author) {
-    const h2 = document.createElement('h2');
-    h2.className = 'author';
-    h2.textContent = `"${title}" by ${author}`;
-    const btn = document.createElement('button');
-    btn.className = 'remove';
-    btn.textContent = 'Remove';
-    const article = document.createElement('article');
-    article.className = 'awesome-book';
-    article.append(h2, btn);
-    return article;
   }
 
   display() {
@@ -36,7 +41,7 @@ class AwesomeBooks {
       this.container.firstChild.remove();
     }
     storeData.forEach((obj) => {
-      const article = this.#addActicle(obj.title, obj.author);
+      const article = createArticle(obj.title, obj.author);
       fragment.appendChild(article);
     });
     this.container.appendChild(fragment);
