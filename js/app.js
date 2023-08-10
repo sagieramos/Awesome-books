@@ -49,9 +49,10 @@ function handleBookStorage(e) {
     formValues.reset();
     if (title && author) {
       const confirm = document.getElementById('confirm');
-      confirm.textContent = `"${title}" by ${author} is added`;
+      confirm.textContent = `"${title}" by ${author} is added!`;
       confirm.style.display = 'block';
       setTimeout(() => {
+        confirm.textContent = null;
         confirm.style.display = 'none';
       }, 2000);
     }
