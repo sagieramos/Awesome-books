@@ -9,11 +9,12 @@ const contact = document.getElementById('contact-container');
 
 setInterval(() => { displayTime('#time'); }, 1000);
 
-function toggleNav(target) {
-  const children = [...document.querySelectorAll('.nav-link')];
+const toggleNav = (target) => {
+  const navLinks = 'nav-links';
+  const children = [...document.getElementById(navLinks).children];
   const index = children.indexOf(target);
 
-  if (target.parentNode.id === 'nav-links') {
+  if (target.parentNode.id === navLinks) {
     children.forEach((item) => {
       item.classList.remove('active');
     });
@@ -30,9 +31,9 @@ function toggleNav(target) {
   } else if (target.id === 'contact') {
     contact.classList.remove('hidden');
   }
-}
+};
 
-function handleBookStorage(e) {
+const handleBookStorage = (e) => {
   const { target } = e;
   if (target.matches('.remove')) {
     target.parentNode.classList.add('fade-out');
@@ -58,16 +59,16 @@ function handleBookStorage(e) {
     }
   }
   toggleNav(target);
-}
+};
 
-function init() {
+const init = () => {
   document.addEventListener('click', handleBookStorage);
   book.display();
-}
+};
 
-function deleteCookie(cookieName) {
+const deleteCookie = (cookieName) => {
   document.cookie = `${cookieName}=; expires=Thu, 01 Jan 2023 00:00:00 UTC; path=/; domain=https://sagieramos.github.io/Awesome-books/;`;
-}
+};
 
 deleteCookie('myCookie');
 
