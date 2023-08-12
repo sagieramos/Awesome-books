@@ -61,13 +61,13 @@ class AwesomeBooks {
   }
 }
 
-function getOrdinal(number) {
+const getOrdinal = (number) => {
   const suffixes = ['th', 'st', 'nd', 'rd'];
   const remainder = number % 100;
   return number + (suffixes[(remainder - 20) % 10] || suffixes[remainder] || suffixes[0]);
-}
+};
 
-function displayTime(element) {
+const displayTime = (element) => {
   const now = new Date();
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -87,6 +87,6 @@ function displayTime(element) {
 
   const timeString = `${month} ${day} ${year}, ${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}`;
   document.querySelector(element).textContent = timeString;
-}
+};
 
 export { AwesomeBooks, displayTime };

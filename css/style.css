@@ -16,8 +16,13 @@ html {
 }
 
 header {
+  position: fixed;
+  width: 100%;
   padding: 12px;
   min-width: 400px;
+  margin-bottom: 60px;
+  background-color: #fff;
+  z-index: 2;
 }
 
 h1 {
@@ -35,6 +40,7 @@ h1 {
 
 #book-container {
   width: 100%;
+  margin-top: 60px;
 }
 
 #books {
@@ -69,6 +75,7 @@ hr {
 #myForm {
   width: 86%;
   max-width: 600px;
+  margin-top: 60px;
 }
 
 form {
@@ -137,13 +144,6 @@ input {
   display: flex;
 }
 
-footer {
-  bottom: 12px;
-  padding: 12px;
-  margin: 12px;
-  border: 1px solid #333;
-}
-
 .copyright {
   font-size: 0.95rem;
   font-weight: 500;
@@ -168,6 +168,7 @@ footer {
 #contact-container {
   min-width: 400px;
   width: 100%;
+  margin-top: 60px;
 }
 
 .cc {
@@ -193,4 +194,22 @@ footer {
 .nav-link:hover {
   cursor: pointer;
   font-weight: 600;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  background: #fff;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: blue;
+  transform: translateY(-5px);
 }
