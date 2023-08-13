@@ -1,37 +1,10 @@
 import { AwesomeBooks, displayTime } from './module.js';
+import toggleNav from './navigation.js';
 
 const book = new AwesomeBooks('User', '#books');
-
-const bookContainer = document.getElementById('book-container');
-const form = document.getElementById('myForm');
 const formValues = document.getElementById('form');
-const contact = document.getElementById('contact-container');
 
 setInterval(() => { displayTime('#time'); }, 1000);
-
-const toggleNav = (target) => {
-  const navLinks = 'nav-links';
-  const children = [...document.getElementById(navLinks).children];
-  const index = children.indexOf(target);
-
-  if (target.parentNode.id === navLinks) {
-    children.forEach((item) => {
-      item.classList.remove('active');
-    });
-    children[index].classList.add('active');
-    bookContainer.classList.add('hidden');
-    form.classList.add('hidden');
-    contact.classList.add('hidden');
-  }
-
-  if (target.id === 'list') {
-    bookContainer.classList.remove('hidden');
-  } else if (target.id === 'addNew') {
-    form.classList.remove('hidden');
-  } else if (target.id === 'contact') {
-    contact.classList.remove('hidden');
-  }
-};
 
 const handleBookStorage = (e) => {
   const { target } = e;
@@ -58,11 +31,14 @@ const handleBookStorage = (e) => {
       }, 2000);
     }
   }
-  toggleNav(target);
 };
 
 const init = () => {
-  document.addEventListener('click', handleBookStorage);
+  document.addEventListener('click', (e) => {
+    handleBookStorage(e);
+    toggleNav(e);
+  });
+
   book.display();
 };
 
