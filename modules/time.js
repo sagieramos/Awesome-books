@@ -1,4 +1,4 @@
-import { DateTime } from './luxon.js';
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
 
 const getOrdinal = (number) => {
   const suffixes = ['th', 'st', 'nd', 'rd'];
@@ -7,12 +7,12 @@ const getOrdinal = (number) => {
 };
 
 const displayTime = (element) => {
-  const now = DateTime.now(); // Invoke the function
+  const now = DateTime.now();
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December',
   ];
-  const month = months[now.month - 1]; // Months are zero-indexed
+  const month = months[now.month - 1];
   const day = getOrdinal(now.day);
   const { year } = now;
   const formattedHours = now.hour % 12 || 12;
