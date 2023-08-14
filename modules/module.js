@@ -37,9 +37,6 @@ class AwesomeBooks {
     const storeData = JSON.parse(localStorage.getItem(this.memAdrr)) || [];
     const fragment = document.createDocumentFragment();
 
-    while (this.container.firstChild) {
-      this.container.firstChild.remove();
-    }
     storeData.forEach((obj) => {
       const article = createArticle(obj.title, obj.author);
       fragment.appendChild(article);
