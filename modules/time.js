@@ -1,4 +1,4 @@
-import { DateTime } from '../node_modules/luxon/src/luxon.js';
+const { DateTime } = window.luxon;
 
 const getOrdinal = (number) => {
   const suffixes = ['th', 'st', 'nd', 'rd'];

@@ -9,6 +9,7 @@ const handleBookStorage = (e) => {
   if (target.matches('.remove')) {
     target.parentNode.classList.add('fade-out');
     const index = [...(document.querySelectorAll('.remove'))].indexOf(target);
+    console.log(index);
     setTimeout(() => {
       book.delete(index);
     }, 300);
