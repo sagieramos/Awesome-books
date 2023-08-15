@@ -4,6 +4,8 @@ const containers = {
   contact: document.getElementById('contact-container'),
 };
 
+let activeIndex = 0;
+
 const toggleNav = (e) => {
   const { target } = e;
 
@@ -12,9 +14,10 @@ const toggleNav = (e) => {
   const children = [...target.parentNode.children];
   const index = children.indexOf(target);
 
-  children.forEach((item) => {
-    item.classList.remove('active');
-  });
+  if (index === activeIndex) return;
+
+  children[activeIndex].classList.remove('active');
+  activeIndex = index;
 
   children[index].classList.add('active');
 

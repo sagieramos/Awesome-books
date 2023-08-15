@@ -1,4 +1,4 @@
-import { AwesomeBooks } from './module.js';
+import AwesomeBooks from './module.js';
 
 const book = new AwesomeBooks('User', '#books');
 const formValues = document.getElementById('form');
